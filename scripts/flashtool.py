@@ -449,7 +449,7 @@ class CanSocket:
                 app = app_names.get(resp[7], "Unknown")
             data = resp[1:7]
             output_line(f"Detected UUID: {data.hex()}, Application: {app}")
-            output_line(f"Data DUMP": {data})
+            output_line(f"Data DUMP: {data}")
             uuid = sum([v << ((5 - i) * 8) for i, v in enumerate(data)])
             if uuid not in self.uuids and app == "Katapult":
                 self.uuids.append(uuid)
